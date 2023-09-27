@@ -29,7 +29,9 @@ class Contatos extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Nome', 'Telefone', 'Email'], 'required'],
+            [['Nome'], 'required','message'=>'Por favor preencha com um nome'],
+            [['Email'], 'required','message'=>'Por favor preencha com um Email'],
+            [['Telefone'], 'required','message'=>'Por favor preencha com um número'],
             [['Nome', 'Email', 'Nota'], 'string', 'max' => 255],
             [['Telefone'], 'string', 'max' => 15],
         ];
